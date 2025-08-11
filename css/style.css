@@ -1,0 +1,590 @@
+@font-face {
+  font-family: "OTEnjoystoriesBA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2")
+      format("woff2"),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff")
+      format("woff"),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf")
+      format("opentype");
+}
+
+html {
+    font-size: 16px; 
+}
+
+body {
+    background-color: #5B2386;
+    text-align: center;
+    margin: 0;
+    font-family: 'GmarketSansMedium', sans-serif;
+}
+
+.btn {
+    padding: clamp(0.5rem, 1vh, 1rem) clamp(1rem, 2vw, 2.5rem);
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    font-weight: 500;
+    margin: 0.625rem;
+    border-radius: 0.625rem;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #FCEE21;
+    color: #5B2386;
+}
+
+.btn-primary:hover {
+    background-color: #F4E600;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(252, 238, 33, 0.4);
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #5B2386;
+}
+
+.btn-secondary:hover {
+    background-color: #F5F5F5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.input-group input {
+    width: clamp(150px, 20vw, 228px);
+    height: auto;
+    padding: 0.6rem 1rem;
+    background: #FFFFFF;
+    border-radius: 8px;
+    color: #000000;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    text-align: center;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #FCEE21;
+    box-shadow: 0 0 0 4px rgba(252, 238, 33, 0.2);
+    transform: scale(1.02);
+}
+
+main {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2vw;
+}
+
+.rule {
+    margin: 2rem 0;
+}
+
+.rule img {
+    max-width: 85%;
+    height: auto;
+}
+
+.quote-section {
+    margin: 3rem 0;
+    color: #F5DF4D;
+    font-family: 'OTEnjoystoriesBA';
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.explanation-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin: 3rem 0;
+    color: #fff;
+    font-size: 1.125rem; 
+}
+
+.explanation-content {
+    text-align: center;
+    flex: 1;
+    max-width: 400px;
+}
+
+.explanation-content p {
+    margin: 0.5rem 0;
+}
+
+.quote {
+    max-width: 60px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.input-form {
+    margin: 3rem 0;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.calculate-section {
+    margin: 3rem 0;
+    position: relative;
+    align-items: end;
+}
+
+.calculate-section .icon {        
+    max-width: 60px;
+    height: auto;
+}
+
+.result-section {
+    margin: 3rem 0;
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.result-section p {
+    margin: 0.5rem 0;
+}
+
+.result-field {
+    color: #FCEE21;
+    text-shadow: 0 0 10px rgba(252, 238, 33, 0.5);
+    font-weight: bold;
+}
+
+.action-section {
+    margin: 3rem 0;
+    position: relative;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal.show .modal-content {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 90%;
+    max-width: 500px;
+    min-height: auto;
+    padding: 3rem;
+    background-color: #fff;
+    color: #5B2386;
+    font-family: 'OTEnjoystoriesBA';
+    text-align: center;
+    border-radius: 0.625rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+.modal-title {
+    font-size: 2.5rem; /* 40px */
+    margin-bottom: 1rem;
+}
+
+.modal-message {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-image {
+    max-width: 80%;
+    height: auto;
+    margin: 1.5rem 0;
+}
+
+.footer {
+    margin: 3rem 0;
+    font-size: 0.75rem;
+    color: #fff;
+}
+
+.footer-logo {
+    max-width: 60%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.footer-copyright {
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.btn:focus,
+input:focus {
+    outline: 2px solid #FCEE21;
+    outline-offset: 2px;
+}
+
+@media (min-width: 1200px) {
+    .modal {
+        padding: 3rem;
+    }
+    
+    .modal-content {
+        max-width: 600px;
+        padding: 4rem;
+    }
+    
+    .modal-title {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .modal-message {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .modal-image {
+        margin: 2rem 0;
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .explanation-section {
+        gap: 0.75rem;
+    }
+    
+    .calculate-section .icon {
+        right: 28.5%;
+        top: 55%;
+        max-width: 50px;
+    }
+    
+    .modal {
+        padding: 1.5rem;
+    }
+    
+    .modal-content {
+        max-width: 450px;
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    main {
+        padding: 0 3vw;
+    }
+    
+    .btn {
+        font-size: 1rem;
+        padding: 2vh 5vw;
+        margin: 0.5rem;
+    }
+    
+    .input-group {
+        gap: 0.75rem;
+    }
+    
+    .input-group input {
+        width: clamp(120px, 25vw, 200px);
+        height: auto;
+        padding: 1vh 3vw;
+        font-size: 0.875rem;
+    }
+    
+    .explanation-section {
+        flex-direction: row;
+        gap: 0.25rem;
+        margin: 2rem 0;
+    }
+    
+    .explanation-content {
+        max-width: 280px;
+    }
+    
+    .quote {
+        max-width: 40px;
+    }
+    
+    .calculate-section {
+        margin: 2rem 0;
+    }
+    
+    .calculate-section .icon {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        max-width: 40px;
+        animation: none;
+    }
+    
+    .modal {
+        padding: 0.5rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        max-width: 350px;
+        padding: 1.5rem;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+        
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    
+    .modal-message {
+        font-size: 1rem;
+    }
+    
+    .modal.show .modal-content {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .rule,
+    .quote-section,
+    .explanation-section,
+    .input-form,
+    .result-section,
+    .action-section,
+    .footer {
+        margin: 2rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+    
+    main {
+        padding: 0 4vw;
+    }
+    
+    .btn {
+        font-size: 0.9rem;
+        padding: 1.5vh 4vw;
+        margin: 0.4rem;
+    }
+    
+    .quote-section {
+        font-size: 1.25rem;
+        margin: 1.5rem 0;
+    }
+    
+    .input-form {
+        font-size: 1.125rem;
+        margin: 1.5rem 0;
+    }
+    
+    .input-group {
+        gap: 0.25rem;
+        margin: 0.75rem 0;
+    }
+    
+    .input-group input {
+        width: clamp(100px, 30vw, 180px);
+        padding: 0.8vh 2vw;
+        font-size: 0.8rem;
+    }
+
+    .input-group-hour {
+        flex-direction: column;
+    }
+    
+    .explanation-section {
+        font-size: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .explanation-content {
+        max-width: 250px;
+    }
+    
+    .result-section {
+        font-size: 1.125rem;
+        margin: 1.5rem 0;
+    }
+    
+    .calculate-section {
+        margin: 1.5rem 0;
+    }
+    
+    .action-section {
+        margin: 1.5rem 0;
+    }
+    
+    .footer {
+        margin: 1.5rem 0;
+        font-size: 0.7rem;
+    }
+    
+    .modal {
+        padding: 0.25rem;
+    }
+    
+    .modal-content {
+        width: 98%;
+        max-width: 320px;
+        padding: 1.25rem;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    
+    .modal-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .modal-message {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .modal-image {
+        margin: 0.75rem 0;
+        max-width: 70%;
+    }
+    
+    .rule img {
+        max-width: 85%;
+    }
+    
+    .quote {
+        max-width: 30px;
+    }
+    
+    .icon {
+        max-width: 35px;
+    }
+    
+    .footer-logo {
+        max-width: 50%;
+    }
+    
+    .modal.show .modal-content {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@media (max-width: 360px) {
+    html {
+        font-size: 12px;
+    }
+    
+    .btn {
+        font-size: 0.85rem;
+        padding: 1.2vh 3vw;
+    }
+    
+    .input-group input {
+        width: clamp(80px, 35vw, 160px);
+        font-size: 0.75rem;
+    }
+    
+    .quote-section {
+        font-size: 1.125rem;
+    }
+
+    .rule img {
+        max-width: 80%;
+    }
+    
+    .quote {
+        max-width: 20px;
+    }
+    
+    .icon {
+        max-width: 30px;
+    }
+    
+    .modal-image {
+        max-width: 65%;
+    }
+    
+    .footer-logo {
+        max-width: 45%;
+    }
+}
